@@ -14,7 +14,7 @@ body {
 
 /* Navbar Styling */
 .navbar {
-    background-color: #f6f5f7;
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -203,14 +203,11 @@ header p {
 footer {
   background-color: #222;
   color: #fff;
-  font-size: 14px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  font-size: 12px;
   text-align: center;
   padding: 10px 0;
   z-index: 10;
+  margin-top: 20px; /* Adds space above the footer */
 }
 
 footer p {
@@ -226,17 +223,15 @@ footer a {
   text-decoration: none;
 }
 
-footer p {
-  margin: 10px 0;
+/* Ensure the footer is pushed to the bottom after content */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-footer i {
-  color: red;
-}
-
-footer a {
-  color: #3C97BF;
-  text-decoration: none;
+main {
+  flex-grow: 1;
 }
 .t{
   color: white;
