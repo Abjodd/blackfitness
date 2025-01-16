@@ -126,6 +126,8 @@ function App() {
       
             <div className="about-images">
               <img src="/WhatsApp Image 2025-01-16 at 06.33.45_3cb394af.jpg" alt="Gym Interior" className="about-img" />
+              <img src="/WhatsApp Image 2025-01-16 at 14.55.09_cb3539ec.jpg" alt="Gym Interior" className="about-img" />
+              <img src="/WhatsApp Image 2025-01-16 at 14.55.08_5f580e18.jpg" alt="Gym Interior" className="about-img" />
               <img src="/WhatsApp Video 2025-01-16 at 06.35.20_761f3e83.mp4" alt="Fitness Class" className="about-img" />
             </div>
           </div>
@@ -136,8 +138,8 @@ function App() {
           <div className="content">
   <h2>Contact Us</h2>
   <p>Email: contact@fitlifegym.com</p>
-  <p>Phone: (123) 456-7890</p>
-  <p>Address: 123 Fitness Lane, Fitness City, 12345</p>
+  <p>Phone: 9606239668</p>
+  <p>Address:2nd Floor, Sharoff Square, 1539, 14th Main Rd, 1st Stage, Kumaraswamy Layout, Bengaluru, Karnataka 560078</p>
   <p>Follow us on social media:</p>
 
   <div className="social-icons">
