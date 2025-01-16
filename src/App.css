@@ -89,7 +89,7 @@ body {
   color: #000;
 }
 .bg-image {
-  background-image: url('./OIP.jpeg');
+  background-image: url('/OIP.jpeg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
