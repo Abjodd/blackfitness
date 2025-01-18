@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import Admin from './Admin'; // Only one import here
 
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
@@ -133,6 +134,9 @@ function App() {
           </div>
         </div>
         );
+      case 'admin':
+        return <Admin />;
+     
       case 'contact':
         return (
           <div className="content">
@@ -163,6 +167,7 @@ function App() {
   return (
     <div className="bg-image">
       <nav className="navbar">
+        <button className="nav-button" onClick={() => setView('admin')}>Admin</button>
         <button className="nav-button" onClick={() => setView('home')}>Home</button>
         <button className="nav-button" onClick={() => setView('about')}>About Us</button>
         <button className="nav-button" onClick={() => setView('contact')}>Contact Us</button>
