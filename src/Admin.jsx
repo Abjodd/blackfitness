@@ -5,6 +5,7 @@ import db from './firebaseConfig';
 const Admin = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
+  const [subscriptionEndDate, setSubscriptionEndDate] = useState('');
   const [members, setMembers] = useState([]);
 
   // Fetch members from Firestore
@@ -24,7 +25,7 @@ const Admin = () => {
 
   // Add a new member to Firestore
   const handleAddMember = async () => {
-    if (name.trim() && phone.trim()) {
+    if (name.trim() && phone.trim() && subscriptionEndDate.trim()) {
       const phoneRegex = /^[0-9]{10}$/; // Assuming a 10-digit phone number
       if (!phoneRegex.test(phone)) {
         alert('Please enter a valid 10-digit phone number.');
@@ -32,18 +33,19 @@ const Admin = () => {
       }
 
       try {
-        const newMember = { name, phone };
+        const newMember = { name, phone, subscriptionEndDate };
         await addDoc(collection(db, 'members'), newMember);
         setMembers([...members, { ...newMember, id: Date.now() }]);
         setName('');
         setPhone('');
+        setSubscriptionEndDate('');
         alert('Member added successfully');
       } catch (error) {
         console.error('Error adding member:', error);
         alert('Error adding member. Please try again.');
       }
     } else {
-      alert('Please enter both name and phone number.');
+      alert('Please enter name, phone number, and subscription end date.');
     }
   };
 
@@ -64,6 +66,11 @@ const Admin = () => {
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
         />
+        <input
+          type="date"
+          value={subscriptionEndDate}
+          onChange={(e) => setSubscriptionEndDate(e.target.value)}
+        />
         <button onClick={handleAddMember}>Add Member</button>
       </div>
       <div>
@@ -71,7 +78,7 @@ const Admin = () => {
         <ul>
           {members.map((member) => (
             <li key={member.id}>
-              {member.name} - {member.phone}
+              {member.name} - {member.phone} - Subscription Ends: {member.subscriptionEndDate}
             </li>
           ))}
         </ul>
