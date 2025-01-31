@@ -1,207 +1,213 @@
 /* General Styles */
 .admin-dashboard {
-    padding: 2rem;
-    color: #c0a000;
-    max-width: 1200px;
-    margin: 0 auto;
-    font-family: 'Arial', sans-serif;
-  }
-  .search-bar {
-    margin-bottom: 1rem;
-  }
-  
-  .search-bar input {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #555;
-    border-radius: 5px;
-    font-size: 1rem;
-    background-color: #444; /* Darker gray */
-    color: #fff; /* White text */
-    transition: border-color 0.3s ease;
-  }
-  
-  .search-bar input:focus {
-    border-color: #ffd700; /* Golden border on focus */
-    outline: none;
-  }
-  h2 {
-    color: #c0a000;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  
-  h3 {
-    color: #c0a000;
-    margin-bottom: 1rem;
-  }
-  
-  /* Add Member Form */
-  .add-member-form {
-    background: #141313;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2rem;
-  }
-  
-  .form-group {
-    margin-bottom: 1rem;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #c0a000;
-  }
-  
-  .form-group input {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #c0a000;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
+  padding: 2rem;
+  color: #c0a000;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Arial', sans-serif;
+  overflow-x: auto; /* Ensure the dashboard doesn't overflow */
+}
+
+.search-bar {
+  margin-bottom: 1rem;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #555;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #444; /* Darker gray */
+  color: #fff; /* White text */
+  transition: border-color 0.3s ease;
+}
+
+.search-bar input:focus {
+  border-color: #ffd700; /* Golden border on focus */
+  outline: none;
+}
+
+h2 {
+  color: #c0a000;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  color: #c0a000;
+  margin-bottom: 1rem;
+}
+
+/* Add Member Form */
+.add-member-form {
+  background: #141313;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #c0a000;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #c0a000;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #c0a000;
+  outline: none;
+}
+
+.error-message {
+  color: #c0a000;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.add-member-button {
+  background-color: #c0a000;
+  color: rgb(17, 17, 17);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.add-member-button:hover {
+  background-color: #c0a000;
+}
+
+/* Member List */
+.member-list {
+  background: #1e1d1d;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  overflow-x: auto; /* Make the table scrollable horizontally */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+table th,
+table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #c0a000;
+}
+
+table th {
+  background-color: #c0a000;
+  color: rgb(20, 20, 20);
+}
+
+table tr:hover {
+  background-color: #0a0a0a;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-dashboard {
+    padding: 1rem;
   }
 
-  
-  .form-group input:focus {
-    border-color: #c0a000;
-    outline: none;
+  .form-group input {
+    font-size: 0.9rem;
   }
-  
-  .error-message {
-    color: #c0a000;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  
-  .add-member-button {
-    background-color: #c0a000;
-    color: rgb(17, 17, 17);
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-    width: 100%;
-  }
-  
-  .add-member-button:hover {
-    background-color: #c0a000;
-  }
-  
-  /* Member List */
-  .member-list {
-    background: #1e1d1d;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-  }
-  
+
   table th,
   table td {
-    padding: 0.75rem;
-    text-align: left;
-    border-bottom: 1px solid #c0a000;
+    padding: 0.5rem;
   }
-  
-  table th {
-    background-color: #c0a000;
-    color: rgb(20, 20, 20);
-  }
-  
-  table tr:hover {
-    background-color: #0a0a0a;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .admin-dashboard {
-      padding: 1rem;
-    }
-  
-    .form-group input {
-      font-size: 0.9rem;
-    }
-  
-    table th,
-    table td {
-      padding: 0.5rem;
-    }
-  }
-  .delete-button {
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .delete-button:hover {
-    background-color: #cc0000;
-  }
-  .admin-dashboard {
-    padding: 20px;
-    max-width: 100%;
-    overflow-x: auto; /* Ensure the dashboard doesn't overflow */
-  }
-  
-  .member-list {
-    width: 100%;
-    overflow-x: auto; /* Make the table scrollable horizontally */
-  }
-  
+
   table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
+    display: block;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent text wrapping */
   }
-  
+
   table th,
   table td {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid #ddd;
+    min-width: 120px; /* Set a minimum width for cells */
   }
-  
-  /* Responsive table styling */
-  @media (max-width: 768px) {
-    table {
-      display: block;
-      overflow-x: auto; /* Enable horizontal scrolling */
-      white-space: nowrap; /* Prevent text wrapping */
-    }
-  
-    table th,
-    table td {
-      min-width: 120px; /* Set a minimum width for cells */
-    }
-  
-    .add-member-form {
-      width: 100%;
-      margin-bottom: 20px;
-    }
-  
-    .form-group {
-      width: 100%;
-    }
-  
-    .form-group input {
-      width: 100%;
-      box-sizing: border-box; /* Ensure padding doesn't increase width */
-    }
-  
-    .search-bar input {
-      width: 100%;
-      box-sizing: border-box;
-    }
+
+  .add-member-form {
+    width: 100%;
+    margin-bottom: 20px;
   }
+
+  .form-group {
+    width: 100%;
+  }
+
+  .form-group input {
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding doesn't increase width */
+  }
+
+  .search-bar input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+.delete-button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.delete-button:hover {
+  background-color: #cc0000;
+}
+
+.check-subscriptions-button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #4caf50, #45a049); /* Gradient background */
+  color: white;
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600; /* Bold text */
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 0.5px; /* Slightly spaced letters */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+
+.check-subscriptions-button:hover {
+  background: linear-gradient(135deg, #45a049, #4caf50); /* Reverse gradient on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Slightly larger shadow on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.check-subscriptions-button:active {
+  transform: translateY(0); /* Reset lift effect when clicked */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Reset shadow when clicked */
+}

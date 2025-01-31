@@ -97,12 +97,13 @@ function App() {
         return (
           <div className="contact-content">
             <h2>Contact Us</h2>
-            <p>Email: contact@fitlifegym.com</p>
+            <p><h2> YASEEN</h2></p>
+            <p>Email: yaseen14395@gmail.com</p>
             <p>Phone: 9606239668</p>
             <p>Address: 2nd Floor, Sharoff Square, 1539, 14th Main Rd, 1st Stage, Kumaraswamy Layout, Bengaluru, Karnataka 560078</p>
             <p>Follow us on social media:</p>
             <div className="social-icons">
-              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com/share/1BAWewiSie/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-facebook"></i>
               </a>
               <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
