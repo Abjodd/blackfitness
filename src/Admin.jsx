@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { collection, addDoc, getDocs } from 'firebase/firestore';
+import { collection, addDoc, getDocs, deleteDoc, doc } from 'firebase/firestore';
 import db from './firebaseConfig';
 import './Admin.css'; // Import a CSS file for styling
 
@@ -52,6 +52,18 @@ const Admin = () => {
     } catch (error) {
       console.error('Error adding member:', error);
       setError('Error adding member. Please try again.');
+    }
+  };
+
+  // Delete a member from Firestore
+  const handleDeleteMember = async (id) => {
+    try {
+      await deleteDoc(doc(db, 'members', id));
+      setMembers(members.filter((member) => member.id !== id));
+      alert('Member deleted successfully');
+    } catch (error) {
+      console.error('Error deleting member:', error);
+      setError('Error deleting member. Please try again.');
     }
   };
 
@@ -113,14 +125,24 @@ const Admin = () => {
               <th>Name</th>
               <th>Phone</th>
               <th>Subscription End Date</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
-            {filteredMembers.map((member) => (
+            {filteredMembers.sort((a, b) => new Date(a.subscriptionEndDate) - new Date(b.subscriptionEndDate))
+            .map((member) => (
               <tr key={member.id}>
                 <td>{member.name}</td>
                 <td>{member.phone}</td>
                 <td>{member.subscriptionEndDate}</td>
+                <td>
+                  <button
+                    className="delete-button"
+                    onClick={() => handleDeleteMember(member.id)}
+                  >
+                    Delete
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
