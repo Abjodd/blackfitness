@@ -6,7 +6,25 @@
     margin: 0 auto;
     font-family: 'Arial', sans-serif;
   }
+  .search-bar {
+    margin-bottom: 1rem;
+  }
   
+  .search-bar input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #444; /* Darker gray */
+    color: #fff; /* White text */
+    transition: border-color 0.3s ease;
+  }
+  
+  .search-bar input:focus {
+    border-color: #ffd700; /* Golden border on focus */
+    outline: none;
+  }
   h2 {
     color: #c0a000;
     text-align: center;

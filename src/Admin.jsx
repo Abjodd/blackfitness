@@ -9,6 +9,7 @@ const Admin = () => {
   const [subscriptionEndDate, setSubscriptionEndDate] = useState('');
   const [members, setMembers] = useState([]);
   const [error, setError] = useState('');
+  const [searchQuery, setSearchQuery] = useState(''); // State for search query
 
   // Fetch members from Firestore
   useEffect(() => {
@@ -54,6 +55,11 @@ const Admin = () => {
     }
   };
 
+  // Filter members based on search query
+  const filteredMembers = members.filter((member) =>
+    member.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="admin-dashboard">
       <h2>Admin Dashboard</h2>
@@ -92,6 +98,15 @@ const Admin = () => {
       </div>
       <div className="member-list">
         <h3>Member List</h3>
+        {/* Search Bar */}
+        <div className="search-bar">
+          <input
+            type="text"
+            placeholder="Search by name..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+        </div>
         <table>
           <thead>
             <tr>
@@ -101,7 +116,7 @@ const Admin = () => {
             </tr>
           </thead>
           <tbody>
-            {members.map((member) => (
+            {filteredMembers.map((member) => (
               <tr key={member.id}>
                 <td>{member.name}</td>
                 <td>{member.phone}</td>
