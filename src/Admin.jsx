@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { collection, addDoc, getDocs } from 'firebase/firestore';
 import db from './firebaseConfig';
+import './Admin.css'; // Import a CSS file for styling
 
 const Admin = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [subscriptionEndDate, setSubscriptionEndDate] = useState('');
   const [members, setMembers] = useState([]);
+  const [error, setError] = useState('');
 
   // Fetch members from Firestore
   useEffect(() => {
@@ -25,63 +27,89 @@ const Admin = () => {
 
   // Add a new member to Firestore
   const handleAddMember = async () => {
-    if (name.trim() && phone.trim() && subscriptionEndDate.trim()) {
-      const phoneRegex = /^[0-9]{10}$/; // Assuming a 10-digit phone number
-      if (!phoneRegex.test(phone)) {
-        alert('Please enter a valid 10-digit phone number.');
-        return;
-      }
+    setError(''); // Clear previous errors
 
-      try {
-        const newMember = { name, phone, subscriptionEndDate };
-        await addDoc(collection(db, 'members'), newMember);
-        setMembers([...members, { ...newMember, id: Date.now() }]);
-        setName('');
-        setPhone('');
-        setSubscriptionEndDate('');
-        alert('Member added successfully');
-      } catch (error) {
-        console.error('Error adding member:', error);
-        alert('Error adding member. Please try again.');
-      }
-    } else {
-      alert('Please enter name, phone number, and subscription end date.');
+    if (!name.trim() || !phone.trim() || !subscriptionEndDate.trim()) {
+      setError('Please fill in all fields.');
+      return;
+    }
+
+    const phoneRegex = /^[0-9]{10}$/; // 10-digit phone number validation
+    if (!phoneRegex.test(phone)) {
+      setError('Please enter a valid 10-digit phone number.');
+      return;
+    }
+
+    try {
+      const newMember = { name, phone, subscriptionEndDate };
+      const docRef = await addDoc(collection(db, 'members'), newMember);
+      setMembers([...members, { ...newMember, id: docRef.id }]);
+      setName('');
+      setPhone('');
+      setSubscriptionEndDate('');
+      alert('Member added successfully');
+    } catch (error) {
+      console.error('Error adding member:', error);
+      setError('Error adding member. Please try again.');
     }
   };
 
   return (
-    <div className="content">
+    <div className="admin-dashboard">
       <h2>Admin Dashboard</h2>
-      <div>
+      <div className="add-member-form">
         <h3>Add Member</h3>
-        <input
-          type="text"
-          placeholder="Member Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Phone Number"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-        />
-        <input
-          type="date"
-          value={subscriptionEndDate}
-          onChange={(e) => setSubscriptionEndDate(e.target.value)}
-        />
-        <button onClick={handleAddMember}>Add Member</button>
+        {error && <p className="error-message">{error}</p>}
+        <div className="form-group">
+          <label>Name:</label>
+          <input
+            type="text"
+            placeholder="Enter member name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+        <div className="form-group">
+          <label>Phone:</label>
+          <input
+            type="text"
+            placeholder="Enter phone number"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+          />
+        </div>
+        <div className="form-group">
+          <label>Subscription End Date:</label>
+          <input
+            type="date"
+            value={subscriptionEndDate}
+            onChange={(e) => setSubscriptionEndDate(e.target.value)}
+          />
+        </div>
+        <button className="add-member-button" onClick={handleAddMember}>
+          Add Member
+        </button>
       </div>
-      <div>
+      <div className="member-list">
         <h3>Member List</h3>
-        <ul>
-          {members.map((member) => (
-            <li key={member.id}>
-              {member.name} - {member.phone} - Subscription Ends: {member.subscriptionEndDate}
-            </li>
-          ))}
-        </ul>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Subscription End Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            {members.map((member) => (
+              <tr key={member.id}>
+                <td>{member.name}</td>
+                <td>{member.phone}</td>
+                <td>{member.subscriptionEndDate}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );

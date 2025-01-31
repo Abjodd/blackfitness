@@ -18,7 +18,7 @@ function App() {
             <div className="container">
               <h1 className="section-title">Pick the best plan for you</h1>
               <div className="pricing-grid">
-                {/* Free Plan */}
+                {/* Normal Plan */}
                 <div className="pricing-card">
                   <h5>NORMAL</h5>
                   <p className="price">
@@ -32,7 +32,7 @@ function App() {
                   <button className="btn-primary" onClick={() => setView('contact')}>Get Started</button>
                 </div>
 
-                {/* Premium Plan */}
+                {/* Couple Plan */}
                 <div className="pricing-card">
                   <h5>COUPLE</h5>
                   <p className="price">
@@ -46,7 +46,7 @@ function App() {
                   <button className="btn-primary" onClick={() => setView('contact')}>Get Started</button>
                 </div>
 
-                {/* Platinum Plan */}
+                {/* Personal Trainer Plan */}
                 <div className="pricing-card">
                   <h5>PERSONAL TRAINER</h5>
                   <p className="price">
@@ -81,9 +81,10 @@ function App() {
                 </p>
               </div>
               <div className="about-images">
-                <img src="/WhatsApp Image 2025-01-16 at 06.33.45_3cb394af.jpg" alt="Gym Interior" />
-                <img src="/WhatsApp Image 2025-01-16 at 14.55.09_cb3539ec.jpg" alt="Gym Interior" />
-                <img src="/WhatsApp Image 2025-01-16 at 14.55.08_5f580e18.jpg" alt="Gym Interior" />
+                <img src="/gym1.jpg" alt="Gym Interior" />
+                <img src="/gym2.jpg" alt="Gym Interior" />
+                <img src="/gym3.jpg" alt="Gym Interior" />
+                <img src="/gym4.jpg" alt="Gym Interior" />
               </div>
             </div>
           </div>

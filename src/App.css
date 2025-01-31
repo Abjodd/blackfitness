@@ -15,23 +15,24 @@ body {
 .navbar {
   display: flex;
   justify-content: center;
-  background-color: #333;
+  background-color: #ff6b6b;
   padding: 1rem;
+  flex-wrap: wrap;
 }
 
 .nav-button {
-  background-color: #555;
+  background-color: #ff4c4c;
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
-  margin: 0 0.5rem;
+  margin: 0.5rem;
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 
 .nav-button:hover {
-  background-color: #777;
+  background-color: #ff3333;
 }
 
 .main-content {
@@ -56,6 +57,7 @@ body {
 .section-title {
   margin-bottom: 2rem;
   font-size: 2rem;
+  color: #ff6b6b;
 }
 
 .pricing-grid {
@@ -71,11 +73,16 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
 }
 
 .price {
   font-size: 2rem;
-  color: #333;
+  color: #ff6b6b;
 }
 
 .features-list {
@@ -86,6 +93,7 @@ body {
 
 .features-list li {
   margin: 0.5rem 0;
+  color: #555;
 }
 
 .btn-primary {
@@ -109,24 +117,30 @@ body {
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 2rem;
   margin-top: 2rem;
 }
 
 .about-text {
   text-align: left;
+  color: #555;
 }
 
 .about-images {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
 }
 
 .about-images img {
   width: 100%;
   border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.about-images img:hover {
+  transform: scale(1.05);
 }
 
 /* Contact Page */
@@ -142,13 +156,13 @@ body {
 }
 
 .social-icons a {
-  color: #333;
+  color: #ff6b6b;
   font-size: 1.5rem;
   transition: color 0.3s ease;
 }
 
 .social-icons a:hover {
-  color: #ff6b6b;
+  color: #ff3333;
 }
 
 /* Footer */
@@ -167,4 +181,29 @@ body {
 
 .footer a:hover {
   text-decoration: underline;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-button {
+    width: 100%;
+    margin: 0.25rem 0;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-images {
+    grid-template-columns: 1fr;
+  }
 }
