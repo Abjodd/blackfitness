@@ -8,8 +8,6 @@ const twilio = require('twilio');
 admin.initializeApp(); // Initialize Firebase Admin SDK
 
 // Retrieve Twilio credentials
-const accountSid = process.env.TWILIO_ACCOUNT_SID || 'ACff3b2851aa56fe1b218b9d4f6323c80f';
-const authToken = process.env.TWILIO_AUTH_TOKEN || 'y01ca506bfc1c21087add75058741404a';
 
 // Initialize Twilio client
 const client = twilio(accountSid, authToken);
