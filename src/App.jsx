@@ -123,10 +123,13 @@ function App() {
   return (
     <div className="app">
       <nav className="navbar">
-        <button className="nav-button" onClick={() => setView('admin')}>Admin</button>
-        <button className="nav-button" onClick={() => setView('home')}>Home</button>
-        <button className="nav-button" onClick={() => setView('about')}>About Us</button>
-        <button className="nav-button" onClick={() => setView('contact')}>Contact Us</button>
+        <img src="/logo.png" alt="BLACK FITNESS Gym Logo" className="logo" />
+        <div className="nav-buttons">
+          <button className="nav-button" onClick={() => setView('admin')}>Admin</button>
+          <button className="nav-button" onClick={() => setView('home')}>Home</button>
+          <button className="nav-button" onClick={() => setView('about')}>About Us</button>
+          <button className="nav-button" onClick={() => setView('contact')}>Contact Us</button>
+        </div>
       </nav>
       <div className="main-content">
         {renderContent()}

@@ -1,25 +1,26 @@
 /* General Styles */
 .admin-dashboard {
     padding: 2rem;
+    color: #c0a000;
     max-width: 1200px;
     margin: 0 auto;
     font-family: 'Arial', sans-serif;
   }
   
   h2 {
-    color: #333;
+    color: #c0a000;
     text-align: center;
     margin-bottom: 2rem;
   }
   
   h3 {
-    color: #555;
+    color: #c0a000;
     margin-bottom: 1rem;
   }
   
   /* Add Member Form */
   .add-member-form {
-    background: #f9f9f9;
+    background: #141313;
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -33,32 +34,32 @@
   .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #555;
+    color: #c0a000;
   }
   
   .form-group input {
     width: 100%;
     padding: 0.75rem;
-    border: 1px solid #ddd;
+    border: 1px solid #c0a000;
     border-radius: 5px;
     font-size: 1rem;
     transition: border-color 0.3s ease;
   }
   
   .form-group input:focus {
-    border-color: #ff6b6b;
+    border-color: #c0a000;
     outline: none;
   }
   
   .error-message {
-    color: #ff4c4c;
+    color: #c0a000;
     margin-bottom: 1rem;
     text-align: center;
   }
   
   .add-member-button {
-    background-color: #ff6b6b;
-    color: white;
+    background-color: #c0a000;
+    color: rgb(17, 17, 17);
     border: none;
     padding: 0.75rem 1.5rem;
     border-radius: 5px;
@@ -69,12 +70,12 @@
   }
   
   .add-member-button:hover {
-    background-color: #ff4c4c;
+    background-color: #c0a000;
   }
   
   /* Member List */
   .member-list {
-    background: #f9f9f9;
+    background: #1e1d1d;
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -90,16 +91,16 @@
   table td {
     padding: 0.75rem;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #c0a000;
   }
   
   table th {
-    background-color: #ff6b6b;
-    color: white;
+    background-color: #c0a000;
+    color: rgb(20, 20, 20);
   }
   
   table tr:hover {
-    background-color: #f1f1f1;
+    background-color: #0a0a0a;
   }
   
   /* Responsive Design */
