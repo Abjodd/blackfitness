@@ -7,7 +7,7 @@ const Login = ({ onLoginSuccess }) => {
   const [error, setError] = useState('');
 
   const handleLogin = () => {
-    if (username === 'admin' && password === 'password') {
+    if (username === 'yaseen' && password === 'blackfitness123') {
       localStorage.setItem('isLoggedIn', 'true'); // Store login state
       onLoginSuccess(); // Call function in App.js to redirect to Admin
     } else {
