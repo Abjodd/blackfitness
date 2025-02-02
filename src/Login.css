@@ -3,8 +3,7 @@
 
 /* Centering the login form */
 .login-container {
-    margin-left: 700px;
-    margin-top: 100px;
+    
   width: 350px;
   padding: 30px;
   background: rgba(255, 255, 255, 0.15);
