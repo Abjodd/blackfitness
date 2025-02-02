@@ -71,6 +71,12 @@ body {
   font-size: 2rem;
   color: #ffd700; /* Golden text */
 }
+.trainer-image{
+  width: 130px; /* Smaller size */
+  height: 130px; /* Ensure it's a circle */
+  border-radius: 50%; /* Circle frame */
+  transition: transform 0.3s ease;
+}
 
 .pricing-grid {
   display: grid;

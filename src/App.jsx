@@ -89,23 +89,26 @@ function App() {
         return (
           <div className="about-content">
             <h1>About Us</h1>
+            <h2>TRAINER Yaseen</h2>
+            <p>Yaseen is a highly skilled gym trainer and the proud owner of Black Fitness Gym. With titles like Mr. Karnataka and Mr. Bangalore under his belt, he brings expertise, dedication, and passion to help others achieve their fitness goals</p>
+            <img src="trainer.jpg" alt="Gym Interior" className="trainer-image" />
             <h2>BLACK FITNESS Gym is dedicated to providing the best fitness experience...</h2>
             <div className="about-grid">
               <div className="about-text">
-                <h3>Our Mission</h3>
-                <p>
-                  At BLACK FITNESS Gym, we strive to help you reach your fitness goals with personalized programs, expert trainers, and a motivating environment.
-                </p>
-                <h3>Our Facilities</h3>
-                <p>
-                  Our gym is equipped with state-of-the-art equipment, spacious workout areas, and a wide variety of classes to suit your needs.
-                </p>
+          <h3>Our Mission</h3>
+          <p>
+            At BLACK FITNESS Gym, we strive to help you reach your fitness goals with personalized programs, expert trainers, and a motivating environment.
+          </p>
+          <h3>Our Facilities</h3>
+          <p>
+            Our gym is equipped with state-of-the-art equipment, spacious workout areas, and a wide variety of classes to suit your needs.
+          </p>
               </div>
               <div className="about-images">
-                <img src="/gym1.jpg" alt="Gym Interior" />
-                <img src="/gym2.jpg" alt="Gym Interior" />
-                <img src="/gym3.jpg" alt="Gym Interior" />
-                <img src="/gym4.jpg" alt="Gym Interior" />
+          <img src="/gym1.jpg" alt="Gym Interior" className="about-image" />
+          <img src="/gym2.jpg" alt="Gym Interior" className="about-image" />
+          <img src="/gym3.jpg" alt="Gym Interior" className="about-image" />
+          <img src="/gym4.jpg" alt="Gym Interior" className="about-image" />
               </div>
             </div>
           </div>
@@ -128,13 +131,20 @@ function App() {
             <p>Follow us on social media:</p>
             <div className="social-icons">
               <a href="https://www.facebook.com/share/1BAWewiSie/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-facebook"></i>
+          <i className="fab fa-facebook"></i>
               </a>
-              <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-twitter"></i>
+             
+              
+              <a href="https://maps.app.goo.gl/fqqGQtrRsGquFf6z6?g_st=com.google.maps.preview.copy" target="_blank" rel="noopener noreferrer">
+                <i className="fas fa-map-marker-alt"></i>
               </a>
+              
+             
               <a href="https://www.instagram.com/blackfitness35" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-instagram"></i>
+          <i className="fab fa-instagram"></i>
+              </a>
+              <a href="https://www.youtube.com/@blackfitness35" target="_blank" rel="noopener noreferrer">
+          <i className="fab fa-youtube"></i>
               </a>
             </div>
           </div>
