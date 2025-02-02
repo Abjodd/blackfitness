@@ -1,11 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';  //
 import './App.css';
-import Admin from './Admin'; // Only one import here
+import Admin from './Admin';
+import Login from './Login.jsx'; // Import the Login component
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function App() {
   const [view, setView] = useState('home');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  useEffect(() => {
+    // Check login state from localStorage on mount
+    const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    setIsLoggedIn(loggedIn);
+  }, []);
+
+  const handleAdminAccess = () => {
+    if (isLoggedIn) {
+      setView('login'); // If logged in, go directly to Admin
+    } else {
+      setView('login'); // Otherwise, go to Login first
+    }
+  };
+
+  const handleLoginSuccess = () => {
+    setIsLoggedIn(true);
+    localStorage.setItem('isLoggedIn', 'true'); // Save login state
+    setView('admin'); // Redirect to Admin after login
+  };
   const renderContent = () => {
     switch (view) {
       case 'home':
@@ -89,9 +110,12 @@ function App() {
             </div>
           </div>
         );
+        case 'login':
+          return <Login onLoginSuccess={handleLoginSuccess} />;
 
       case 'admin':
-        return <Admin />;
+        // Only render Admin if logged in, else render Login
+        return isLoggedIn ? <Admin /> : <Login onLoginSuccess={handleLoginSuccess} />;
 
       case 'contact':
         return (
@@ -126,7 +150,7 @@ function App() {
       <nav className="navbar">
         <img src="/logo.png" alt="BLACK FITNESS Gym Logo" className="logo" />
         <div className="nav-buttons">
-          <button className="nav-button" onClick={() => setView('admin')}>Admin</button>
+          <button className="nav-button" onClick={handleAdminAccess}>Admin</button>
           <button className="nav-button" onClick={() => setView('home')}>Home</button>
           <button className="nav-button" onClick={() => setView('about')}>About Us</button>
           <button className="nav-button" onClick={() => setView('contact')}>Contact Us</button>
